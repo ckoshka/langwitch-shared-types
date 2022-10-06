@@ -11,16 +11,16 @@ export type ConceptQueryEffect = {
 	//
 };
 
-export type ContextQueryEffect<T> = {
+export type ContextQueryEffect = {
 	nextContexts: Free<
-		Array<BaseContext<T>>,
+		Array<BaseContext>,
 		{ knowns: Iterable<ConceptId>; focus: Iterable<ConceptId> }
 	>;
 };
 
-export type StateCalculationEffects<T> =
+export type StateCalculationEffects =
 	& ConceptQueryEffect
-	& ContextQueryEffect<T>;
+	& ContextQueryEffect;
 
 // todo: the sorting of the contexts should be an effect
 // todo: choosing what concepts next is an effect, we might want several layers
