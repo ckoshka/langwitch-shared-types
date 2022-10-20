@@ -1,4 +1,3 @@
-
 export type CoreParams = {
 	flexibility: number; // should be around 0.07
 	knownThreshold: number; // should be -0.4
