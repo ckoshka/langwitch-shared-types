@@ -1,18 +1,9 @@
 import { int } from "../deps.ts";
-import { ConceptName } from "./concept.ts";
 
 export interface BaseContext {
 	concepts: Array<string>;
 	id: int;
 }
-
-export type Score<Min extends number, Max extends number> =
-	& number
-	& { ___score: never }
-	& Record<Min, never>
-	& Record<Max, never>;
-
-export type MarkedResult = [ConceptName, Score<0, 1>][];
 // front: chinese characters
 // back: pinyin
 // chinese chars don't need a separate system, just a separate preproc step that inserts:
